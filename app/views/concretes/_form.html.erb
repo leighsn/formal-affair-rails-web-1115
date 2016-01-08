@@ -1,17 +1,18 @@
 
+<% if @new %>
 <%= form_tag("/concretes", method: "post") do %>
+<% else %>
+<%= form_tag("/concretes", method: "patch") do %>
+<% end %>
   <%= label_tag("concrete[mix_type]", "Mix Type") %>
   <%= text_field_tag("concrete[mix_type]") %>
 
   <%= label_tag('concrete[color]', "Color") %>
   <%= text_field_tag('concrete[color]') %>
 
-  <%= label_tag('concrete[psi]', "PSI") %>
-  <%= text_field_tag('concrete[psi]') %>
-
-  <%= label_tag('concrete[cost_per_yard]', "Cost Per Yard") %>
-  <%= text_field_tag('concrete[cost_per_yard]') %>
-
+  <% if @new %>
   <%= submit_tag "Create Concrete" %>
-
+  <% else %>
+  <%= submit_tag "Update Concrete" %>
+  <% end %>
 <% end %>

@@ -1,1 +1,23 @@
 <!-- Your form goes here! -->
+<%= form_for(@baby) do |f| %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %><br>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %><br>
+  </div>
+  <div class="field">
+    <%= f.label :birth_date %><br>
+    <%= f.text_field :birth_date %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
